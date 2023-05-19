@@ -1,8 +1,137 @@
-<DOCTYPE! html>
-    <head>
-        <title>JS Game</title>
-    </head>
-    <body>
-        <div></div>
-    </body>
+<!DOCTYPE html>
+
+<head>
+    <title>JS Game</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>JavaScript Game</h1>
+    <div>
+        <h2>Ideas</h2>
+        <ul>
+            <li>2048</li>
+            <li>Block game</li>
+            <li>Puzzle</li>
+            <li>Chess</li>
+            <li>Checkers </li>
+            <!-- <button onclick="playCheckers()">Play</button> -->
+        </ul>
+    </div>
+    <div>
+        <h2>Checkers</h2>
+        <div id="checkers_turn">
+            <p>Turn: White</p>
+        </div>
+        <div id="checkers_options">
+            <p>
+                <button onclick="reset()">Reset Game</button>
+            </p>
+            <p>
+                <button onclick="swap_player()">Swap Player</button>
+            </p>
+        </div>
+        <table>
+            <thead>
+                <td></td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </thead>
+            <tbody id="checkers_board"></tbody>
+            <!-- 8x8 board -->
+            <!-- <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr> -->
+            <!-- <tbody id="checkers_board" class="eight_board">
+                <tr id="r1">
+                    <td class="no_piece"></td>
+                    <td class="piece one"> </td>
+                    <td class="no_piece"></td>
+                    <td class="piece one"> </td>
+                    <td class="no_piece"></td>
+                    <td class="piece one"> </td>
+                    <td class="no_piece"></td>
+                    <td class="piece one"> </td>
+                </tr>
+                <tr id="r2">
+                    <td class="piece one"> </td>
+                    <td class="no_piece"></td>
+                    <td class="piece one"> </td>
+                    <td class="no_piece"></td>
+                    <td class="piece one"> </td>
+                    <td class="no_piece"></td>
+                    <td class="piece one"> </td>
+                    <td class="no_piece"></td>
+                </tr>
+                <tr id="r3">
+                    <td class="no_piece"></td>
+                    <td class="piece one"> </td>
+                    <td class="no_piece"></td>
+                    <td class="piece one"> </td>
+                    <td class="no_piece"></td>
+                    <td class="piece one"> </td>
+                    <td class="no_piece"></td>
+                    <td class="piece one"> </td>
+                </tr>
+                <tr id="r4">
+                    <td class=""> </td>
+                    <td class="no_piece"></td>
+                    <td class=""> </td>
+                    <td class="no_piece"></td>
+                    <td class=""></td>
+                    <td class="no_piece"></td>
+                    <td class=""></td>
+                    <td class="no_piece"></td>
+                </tr>
+                <tr id="r5">
+                    <td class="no_piece"></td>
+                    <td></td>
+                    <td class="no_piece"></td>
+                    <td></td>
+                    <td class="no_piece"></td>
+                    <td></td>
+                    <td class="no_piece"></td>
+                    <td></td>
+                </tr>
+                <tr id="r6">
+                    <td class="piece two"></td>
+                    <td class="no_piece"></td>
+                    <td class="piece two"></td>
+                    <td class="no_piece"></td>
+                    <td class="piece two"></td>
+                    <td class="no_piece"></td>
+                    <td class="piece two"></td>
+                    <td class="no_piece"></td>
+                </tr>
+                <tr id="r7">
+                    <td class="no_piece"></td>
+                    <td class="piece two"></td>
+                    <td class="no_piece"></td>
+                    <td class="piece two"></td>
+                    <td class="no_piece"></td>
+                    <td class="piece two"></td>
+                    <td class="no_piece"></td>
+                    <td class="piece two"></td>
+                </tr>
+                <tr id="r8">
+                    <td class="piece two"></td>
+                    <td class="no_piece"></td>
+                    <td class="piece two"></td>
+                    <td class="no_piece"></td>
+                    <td class="piece two"></td>
+                    <td class="no_piece"></td>
+                    <td class="piece two"></td>
+                    <td class="no_piece"></td>
+                </tr>
+            </tbody> -->
+        </table>
+    </div>
+</body>
 </DOCTYPE>
