@@ -46,7 +46,7 @@ thead td {
     width: 3%;
 }
 
-.no_piece {
+.no_piece, .unused_space {
     background-color: beige;
 }
 
