@@ -61,7 +61,8 @@ function update_board() {
       new_contents += '" onclick="clicked(' + row + "," + col + ')"></td>';
     }
   }
-  $("#checkers_board").html(new_contents);
+  let page_board = document.getElementById("checkers_board");
+  page_board.innerHTML = new_contents;
 }
 
 /**
@@ -201,7 +202,8 @@ function alert_invalid(row, col) {
 }
 
 function highlight(row, col) {
-  $("#" + row + "_" + col).css({ backgroundColor: "yellow" });
+  let el = document.getElementById(row + "_" + col);
+  el.style.backgroundColor = 'yellow';
 }
 
 /**
@@ -375,10 +377,11 @@ function swap_player() {
   move_to = null;
   move_count = 0;
   update_board();
+  let player_turn = document.getElementById("checkers_turn");
   if (player_one) {
-    $("#checkers_turn").html("<p>Turn: White</p>");
+    player_turn.innerHTML = "<p>Turn: White</p>";
   } else {
-    $("#checkers_turn").html("<p>Turn: Black</p>");
+    player_turn.innerHTML = "<p>Turn: Black</p>";
   }
 }
 
@@ -460,6 +463,19 @@ function is_opposite_neighbour_open(investigating, selected) {
   return false;
 }
 
-$(document).ready(function () {
+function docReady(fn) {
+  // see if DOM is already available
+  if (
+    document.readyState === "complete" ||
+    document.readyState === "interactive"
+  ) {
+    // call on next available tick
+    setTimeout(fn, 1);
+  } else {
+    document.addEventListener("DOMContentLoaded", fn);
+  }
+}
+
+docReady(function () {
   build_board();
 });
